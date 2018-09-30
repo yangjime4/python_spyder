@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import urllib2
-import json
-import jmespath 
+import json 
+import jsonpath
 
 #测试
 #server = "10.6.62.226:8981"
@@ -15,13 +15,13 @@ def getProductIdsByWordCode(wordCode):
     res_data = urllib2.urlopen(req)
     res = res_data.read()
     jsonobj = json.loads(res)
-    productList = jmespath.search('response.docs[*].id', jsonobj)    
+    productList =jsonpath.jsonpath(jsonobj, '$..docs[*].id')    
     return productList
 
 
 
 
-#print getProductIdsByWordCode("80090203000000")
+print getProductIdsByWordCode("80090203000000")
     
     
     
