@@ -110,18 +110,17 @@ def get_filter_img(word_code, img_name):
 #     for word_code in word_code_list:
 
 
-def regression_test(word_code):
+#def regression_test(word_code):
     # interface1-7
-    assert (get_prod_list(word_code) is not None)
-
-    assert (download_imgs(word_code) == '下载完成')
-
-    assert (get_raw_imgs(word_code) is not None)
-
-    assert (get_raw_img(word_code, '923310729.jpg') is not None)
+    # assert (get_prod_list(word_code) is not None)
+    #
+    # assert (download_imgs(word_code) == '下载完成')
+    #
+    # assert (get_raw_imgs(word_code) is not None)
+    #
+    # assert (get_raw_img(word_code, '923310729.jpg') is not None)
 
 
 if __name__ == '__main__':
     # regression_test('80090404040102')
-    # app.run(host='127.0.0.1', port='5000', debug=0)
-    print(get_filter_img('80090404040102', '923363698.jpg'))
+    app.run(host='127.0.0.1', port='5000', debug=0)
